@@ -1,11 +1,9 @@
 FROM arshsisodiya/helioskirepo:public
 
-WORKDIR /usr/src/app
-RUN chmod 777 /usr/src/app
+WORKDIR /maruf
+RUN chmod 777 /maruf
+RUN apt install git -y
+RU git clone https://github.com/rootedcyber93/helios-mirror
 
-COPY requirements.txt .
-RUN pip3 install --no-cache-dir -r requirements.txt
 
-COPY . .
-
-CMD ["bash", "start.sh"]
+RUN cd /maruf/helios*;pip3 install --no-cache-dir -r requirements.txt;bash start.sh
