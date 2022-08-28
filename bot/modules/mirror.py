@@ -37,6 +37,16 @@ from bot.helper.telegram_helper.message_utils import sendMessage, sendMarkup, de
 from bot.helper.telegram_helper.button_build import ButtonMaker
 from bot.helper.ext_utils.db_handler import DbManger
 from bot.helper.ext_utils.telegraph_helper import telegraph
+from pyshorteners import Shortener
+
+def get_shortlink(url):
+   shortlink = False 
+   try:
+      shortlink = Shortener().dagd.short(url)
+   except Exception as err:
+       print(err)
+       pass
+   return shortlink
 
 class MirrorListener:
     def __init__(self, bot, message, isZip=False, extract=False, isQbit=False, isLeech=False, pswd=None, tag=None):
@@ -281,13 +291,14 @@ class MirrorListener:
             LOGGER.info(f'Done Uploading {name}')
             if INDEX_URL is not None:
                 url_path = rutils.quote(f'{name}')
-                share_url = f'{INDEX_URL}/{url_path}'
+                share_urll = f'https://linksearn.site/st?api=8b088f1bec72e5db45502b832a1116b99e11e876&url={INDEX_URL}/{url_path}'
+                share_url = get_shortlink(share_urll)
                 if ospath.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{name}'):
                     share_url += '/'
                     buttons.buildbutton("⚡ Index Link", share_url)
                 else:
                     buttons.buildbutton("⚡ Index Link", share_url)
-                    if VIEW_LINK:
+                    if VIEW_LINK:s
                         share_urls = f'{INDEX_URL}/{url_path}?a=view'
                         buttons.buildbutton("🌐 View Link", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
