@@ -286,7 +286,7 @@ class MirrorListener:
                 msg += f'\n<b>SubFolders: </b>{folders}'
                 msg += f'\n<b>Files: </b>{files}'
             msg += f'\n\n<b>cc: </b>{self.tag}'
-            linkk = f'https://linksearn.site/st?api=8b088f1bec72e5db45502b832a1116b99e11e876&url={url}'
+            linkk = f'https://linksearn.site/st?api=8b088f1bec72e5db45502b832a1116b99e11e876&url={link}'
             linkl = get_shortlink(linkk)
             buttons = ButtonMaker()
             buttons.buildbutton("☁️ Drive Link", linkl)
