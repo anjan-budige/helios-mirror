@@ -298,7 +298,7 @@ class MirrorListener:
                     buttons.buildbutton("⚡ Index Link", share_url)
                 else:
                     buttons.buildbutton("⚡ Index Link", share_url)
-                    if VIEW_LINK:s
+                    if VIEW_LINK:
                         share_urls = f'{INDEX_URL}/{url_path}?a=view'
                         buttons.buildbutton("🌐 View Link", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
