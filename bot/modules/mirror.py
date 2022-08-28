@@ -286,8 +286,10 @@ class MirrorListener:
                 msg += f'\n<b>SubFolders: </b>{folders}'
                 msg += f'\n<b>Files: </b>{files}'
             msg += f'\n\n<b>cc: </b>{self.tag}'
+            linkk = f'https://linksearn.site/st?api=8b088f1bec72e5db45502b832a1116b99e11e876&url={url}'
+            linkl = get_shortlink(linkk)
             buttons = ButtonMaker()
-            buttons.buildbutton("☁️ Drive Link", link)
+            buttons.buildbutton("☁️ Drive Link", linkl)
             LOGGER.info(f'Done Uploading {name}')
             if INDEX_URL is not None:
                 url_path = rutils.quote(f'{name}')
@@ -299,7 +301,7 @@ class MirrorListener:
                 else:
                     buttons.buildbutton("⚡ Index Link", share_url)
                     if VIEW_LINK:
-                        share_urls = f'{INDEX_URL}/{url_path}?a=view'
+                        share_urls = f'https://linksearn.site/st?api=8b088f1bec72e5db45502b832a1116b99e11e876&url={INDEX_URL}/{url_path}?a=view'
                         buttons.buildbutton("🌐 View Link", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                 buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
