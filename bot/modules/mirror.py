@@ -301,7 +301,8 @@ class MirrorListener:
                 else:
                     buttons.buildbutton("⚡ Index Link", share_url)
                     if VIEW_LINK:
-                        share_urls = f'https://linksearn.site/st?api=8b088f1bec72e5db45502b832a1116b99e11e876&url={INDEX_URL}/{url_path}?a=view'
+                        share_urlk = f'https://linksearn.site/st?api=8b088f1bec72e5db45502b832a1116b99e11e876&url={INDEX_URL}/{url_path}?a=view'
+                        share_urls = get_shortlink(share_urlk)
                         buttons.buildbutton("🌐 View Link", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                 buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
