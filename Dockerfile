@@ -1,4 +1,4 @@
-FROM arshsisodiya/helioskirepo:public
+FROM anjan-budige/helios-mirror:public
 
 WORKDIR /maruf
 RUN chmod 777 /maruf
